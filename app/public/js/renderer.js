@@ -148,11 +148,6 @@ define([
                 var tagContent = utils.getCarouselItem(albums[i].image[3]["#text"], artistName, artistUrl, active);
 
                 document.getElementById('music').innerHTML += tagContent;
-                // document.getElementById('music').innerHTML += utils.getImgTag(data.topalbums.album[i].image[3]["#text"]);
-
-                // var imgTag = "<img src=" + data.topalbums.album[i].image[3]["#text"] + ">";
-                // var artistInfo = "<p>" + data.topalbums.album[i].artist.name +"</p>";
-                // var playCount = "<p>" + data.topalbums.album[i].playcount + "</p>";
             }
         });
 

@@ -31,33 +31,12 @@
             <!-- Right Panel -->
             <div class="col-md-9">
                 <div class="container">
-                    <h2 align="center">Certificates</h2>
-                    <div id="carousel-certificates" class="carousel slide" data-ride="carousel">
-                        <div id="certificates-img" class="carousel-inner"><!--Images Go Here --></div>
-                        <!-- Carousel nav -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="$('#carousel-certificates').carousel('prev')">‹</a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="$('#carousel-certificates').carousel('next')">›</a>
-                        <!--<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>-->
-                        <!--<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
-                    </div>
-                    <!--<div id="certificates-img"></div>-->
-                    <h2 align="center">Projects I've taken role</h2>
-                    <!--<div id="projects-img"></div>-->
-                    <div id="carousel-projects" class="carousel slide" data-ride="carousel">
-                        <div id="projects-img" class="carousel-inner"><!--Images Go Here --></div>
-                    </div>
-
                     <% for(var i in contents) {
                             if(contents[i].flag === true) {  %>
-                    <h2 align="center"><%= contents[i].title %></h2>
+                                <h2 align="center"><%= contents[i].title %></h2>
                                 <%- contents[i].content %>
-                    <% }
-                     } %>
-                    <h2 align="center">Personal Interests</h2>
-
-                    <h2 align="center">Music I've been listening</h2>
-                    <p>I consider music as an inspiration to any kind of work so I like to take inspiration out it, ranging from Classical to Soundtracks and even Rock and Metal, to Pop from the 80s</p>
-                    <div id="music" class="carousel slide" data-ride="carousel"></div>
+                            <% }
+                    } %>
                 </div>
             </div>
 
@@ -120,23 +99,8 @@
             <!--<h2>Pictures I've taken</h2>-->
             <div id="instafeed"></div>
         </div>
+        </div>
 
     </div>
-
-
-    <script>
-        // Fixes the prev/next links of the sliders
-        $('.carousel-control.left').click(function(e) {
-            e.stopPropagation();
-            $('#carousel-certificates').carousel('prev');
-            return false;
-        });
-
-        $('.carousel-control.right').click(function(e) {
-            e.stopPropagation();
-            $("#carousel-certificates").carousel('next');
-            return false;
-        });
-    </script>
 </body>
 </html>
