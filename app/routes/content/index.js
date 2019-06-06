@@ -21,7 +21,7 @@ router.post('/new-content', (req, res) => {
 
     content.save()
         .then(result => {
-            Job.find().exec()
+            Content.find().exec()
                 .then(result => res.render('edit', { education: null, job: null, keyword: null, content: result } ))
                 .catch(err => console.log(err));
         })

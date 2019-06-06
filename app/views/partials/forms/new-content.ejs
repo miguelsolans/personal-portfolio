@@ -1,0 +1,24 @@
+<!-- Add new Content -->
+<div class="panel panel-warning">
+    <div class="panel-heading">New Content</div>
+    <div class="panel-body">
+        <form action="/admin/new-content" method="POST">
+            <label>Title</label>
+            <br>
+            <input type="text" placeholder="Title" name="title">
+            <br>
+            <label>Content</label>
+            <br>
+            <textarea class="form-control" rows="5" type="text" placeholder="Description" name="content"></textarea>
+            <br>
+            <label>Display</label>
+            <br>
+            <select name="flag">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+            <br>
+            <button class="btn btn-primary" type="submit">Update</button>
+        </form>
+    </div>
+</div>
