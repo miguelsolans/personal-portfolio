@@ -66,7 +66,15 @@ Some features to be implemented in the future
 | 3  | Portfolio Themes                     | Medium         | To Develop after 2 |
 | 4* | Export to Curriculumn Vitae          | Low            | To Develop         |
   
-  * More fields need to be created on database
-  
-#   License
-Copyright (c) 2019, Miguel Solans
+  \* More fields need to be created on database  
+ 
+#   Repository
+
+I've put my sweat and tears into this project and I will continue doing so 
+because I found this project quite empowering and fun some way.  
+
+If you find it useful or interesting, please do not replicate this idea. 
+Although, you're free to contribute on this [Github Repository](https://github.com/miguelsolans/personal-portfolio)  
+    
+#   Disclaimer
+Copyright (c) 2019, Miguel Solans  
