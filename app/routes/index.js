@@ -10,19 +10,22 @@ const Job       = require('../models/Jobs');
 const Users     = require('../models/Users');
 const Keywords  = require('../models/Keywords');
 const Widgets   = require('../models/Widgets');
+const Content   = require('../models/Content');
 
 // Home
 router.get('/', function(req, res) {
-    var educationList = Education.find({});
-    var jobsList      = Job.find({});
-    var tagsList      = Keywords.find({});
-    var widgetList    = Widgets.find({});
+    var educationList = Education.find({}),
+        jobsList      = Job.find({}),
+        tagsList      = Keywords.find({}),
+        widgetList    = Widgets.find({}),
+        contentList   = Content.find({});
 
     var resources = {
         education:  educationList.exec.bind(educationList),
         job:        jobsList.exec.bind(jobsList),
         tags:       tagsList.exec.bind(tagsList),
-        widgets: widgetList.exec.bind(widgetList)
+        widgets:    widgetList.exec.bind(widgetList),
+        content:    contentList.exec.bind(contentList)
     };
 
     async.parallel(resources, function(error, result) {
@@ -53,7 +56,8 @@ router.get('/', function(req, res) {
             education: result.education,
             job: result.job,
             tags: tagTxt,
-            widgets: result.widgets
+            widgets: result.widgets,
+            contents: result.content
         });
     })
 });

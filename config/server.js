@@ -10,7 +10,7 @@ const mongoose      = require('mongoose');
 // Configure Database
 let db = 'mongodb://localhost:27017/portfolio';                   // Local
 // let db = "mongodb+srv://miguelsolans:IAmForgetful" +
-//     "@cluster0-ind49.mongodb.net/portfolio?retryWrites=true";
+//      "@cluster0-ind49.mongodb.net/portfolio?retryWrites=true";
 
 mongoose.connect(db, {
     useNewUrlParser: true
@@ -50,11 +50,15 @@ const PortfolioRoutes = require('../app/routes/');
 const JobRoutes       = require('../app/routes/job/');
 const EducationRoutes = require('../app/routes/education/');
 const SettingsRoutes  = require('../app/routes/settings/');
+const ContentRoutes   = require('../app/routes/content');
+
 // Webapp Portfolio Routes
 app.use('/', PortfolioRoutes);
+// Administration Routes
 app.use('/admin', JobRoutes);
 app.use('/admin', EducationRoutes);
 app.use('/admin', SettingsRoutes);
+app.use('/admin', ContentRoutes);
 
 // If any error occurs
 app.use(function(req, res) {

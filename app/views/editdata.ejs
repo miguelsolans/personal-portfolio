@@ -27,7 +27,7 @@
     <form action="/admin/update-job" method="POST">
         <label>Company</label>
         <br>
-        <input type="text" placeholder="Job" name="job" value="<%= job.company %>">
+        <input type="text" placeholder="Job" name="company" value="<%= job.company %>">
         <br>
         <label>Description</label>
         <br>
@@ -76,6 +76,29 @@
             <br>
             <button class="btn btn-primary" type="submit">Update</button>
             <input name="widgetId" type="text" hidden value="<%= widget._id %>" >
+        </form>
+    <% } else if(content) { %>
+
+        <h1 align="center">Editing Content</h1>
+        <!-- Editing Job Form -->
+        <form action="/admin/update-content" method="POST">
+            <label>Title</label>
+            <br>
+            <input type="text" placeholder="Title" name="title" value="<%= content.title %>">
+            <br>
+            <label>Content</label>
+            <br>
+            <textarea class="form-control" rows="5" type="text" placeholder="Description" name="description"><%= content.content %></textarea>
+            <br>
+            <label>Display</label>
+            <br>
+            <select name="flag">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+            <br>
+            <button class="btn btn-primary" type="submit">Update</button>
+            <input name="contentId" type="text" hidden value="<%= content._id %>" >
         </form>
     <% }  %>
 </div>

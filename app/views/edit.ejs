@@ -73,6 +73,38 @@
 
 
 <% } %>
+<% if(content !== null) { %>
+    <h1 align="center">Content Listing</h1>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for(var i in content) {%>
+                <tr class="education">
+                    <td><%= i %></td>
+                    <td><%= content[i].title %></td>
+                    <td>
+                        <a href="/admin/update-content/<%= content[i]._id %>">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/admin/delete-content/<%= content[i]._id %>">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+<% } %>
 </div>
 
 <%- include('partials/footer') %>

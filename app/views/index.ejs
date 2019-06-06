@@ -47,6 +47,12 @@
                         <div id="projects-img" class="carousel-inner"><!--Images Go Here --></div>
                     </div>
 
+                    <% for(var i in contents) {
+                            if(contents[i].flag === true) {  %>
+                    <h2 align="center"><%= contents[i].title %></h2>
+                                <%- contents[i].content %>
+                    <% }
+                     } %>
                     <h2 align="center">Personal Interests</h2>
                     <p>I love <strong>movies</strong>, watching <strong>series</strong> and listening to <strong>music</strong>, as you can tell</p>
                     <p><strong>The Terminator</strong> Movies and Series are my favorite franchises of all time!</p>

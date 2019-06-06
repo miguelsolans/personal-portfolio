@@ -95,7 +95,7 @@ define([
         }
     });
 
-        // Instagram feed
+    // Instagram feed
     var userFeed = new Instafeed({
         get: 'user',
         userId: '13531427925',

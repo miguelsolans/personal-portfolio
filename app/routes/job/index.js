@@ -23,7 +23,7 @@ router.post('/new-job', (req, res) => {
     job.save()
         .then(result => {
             Job.find().exec()
-                .then(result => res.render('edit', { education: null, job: result, keyword: null, widget: null } ))
+                .then(result => res.render('edit', { education: null, job: result, keyword: null, content: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err))
@@ -39,7 +39,7 @@ router.get('/edit-job', (req, res) => {
         .exec()
         .then(docs => {
             console.log(docs);
-            res.render('edit', { education: null, job: docs, keyword: null } );
+            res.render('edit', { education: null, job: docs, keyword: null, content: null } );
         })
 });
 
@@ -54,7 +54,7 @@ router.get('/edit-job/:id', (req, res) => {
         .select()
         .exec()
         .then(docs => {
-            res.render('editdata', { education: null, job: docs, keyword: null } );
+            res.render('editdata', { education: null, job: docs, keyword: null, content: null } );
         });
 });
 router.post('/update-job', (req, res) => {
@@ -74,7 +74,7 @@ router.post('/update-job', (req, res) => {
         .exec()
         .then(result => {
             Job.find().exec()
-                .then(result => res.render('edit', { education: null, job: result, keyword: null } ))
+                .then(result => res.render('edit', { education: null, job: result, keyword: null, content: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err))
@@ -92,7 +92,7 @@ router.get('/delete-job/:id', (req, res) => {
         .exec()
         .then(result => {
             Job.find().exec()
-                .then(result => res.render('edit', { education: null, job: result, keyword: null } ))
+                .then(result => res.render('edit', { education: null, job: result, keyword: null, content: null, widget: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err));

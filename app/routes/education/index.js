@@ -22,7 +22,7 @@ router.post('/new-education', (req, res) => {
     education.save()
         .then(result => {
             Education.find().exec()
-                .then(result => res.render('edit', { education: result, job: null, keyword: null, widget: null } ))
+                .then(result => res.render('edit', { education: result, job: null, keyword: null, content: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err))
@@ -37,7 +37,7 @@ router.get('/edit-education', (req, res) => {
         .select()
         .exec()
         .then(docs => {
-            res.render('edit', { education: docs, job: null, keyword: null } );
+            res.render('edit', { education: docs, job: null, keyword: null, content: null } );
         });
 });
 
@@ -51,7 +51,7 @@ router.get('/edit-education/:id', (req, res) => {
         .select()
         .exec()
         .then(docs => {
-            res.render('editdata', { education: docs, job: null, keyword: null } );
+            res.render('editdata', { education: docs, job: null, keyword: null, content: null, widget: null } );
         });
 });
 router.post('/update-education', (req, res) => {
@@ -68,7 +68,7 @@ router.post('/update-education', (req, res) => {
         .exec()
         .then(result => {
             Education.find().exec()
-                .then(result => res.render('edit', { education: result, job: null, keyword: null } ))
+                .then(result => res.render('edit', { education: result, job: null, keyword: null, content: null, widget: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err))
@@ -86,7 +86,7 @@ router.get('/delete-education/:id', (req, res) => {
         .exec()
         .then(result => {
             Education.find().exec()
-                .then(result => res.render('edit', { education: result, job: null, keyword: null } ))
+                .then(result => res.render('edit', { education: result, job: null, keyword: null, content: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
