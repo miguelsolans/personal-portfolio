@@ -1,9 +1,9 @@
 // Server configuration file
-let app = require('./config/server');
+let app     = require('./config/server');
 // enable secure HTTP
-const https     = require('https');
+const https = require('https');
 // File System
-const fs        = require('fs');
+const fs    = require('fs');
 // App Serving Port
 let PORT = process.env.PORT || 3000;
 

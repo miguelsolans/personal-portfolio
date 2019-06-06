@@ -48,6 +48,11 @@
                     </div>
 
                     <h2 align="center">Personal Interests</h2>
+                    <p>I love <strong>movies</strong>, watching <strong>series</strong> and listening to <strong>music</strong>, as you can tell</p>
+                    <p><strong>The Terminator</strong> Movies and Series are my favorite franchises of all time!</p>
+                    <p>I love <strong>Web Development</strong> challenges and whenever some freetime is available I spend it learning more about it</p>
+                    <p><strong>Languages</strong> are also a big passion. Due to that, I love <strong>travelling</strong>, make new friends who can show me around the corners</p>
+                    <p>Due to my Music and Foreign Languages passion, when I have some spare time to kill <strong>I write music reviews</strong></p>
                     <h2 align="center">Music I've been listening</h2>
                     <p>I consider music as an inspiration to any kind of work so I like to take inspiration out it, ranging from Classical to Soundtracks and even Rock and Metal to Pop from the 80s</p>
                     <div id="music" class="carousel slide" data-ride="carousel"></div>
@@ -98,6 +103,16 @@
                         <% } %>
                     </ol>
                 </div>
+
+                <!-- Custom Widgets -->
+
+                <% for(var i in widgets) { %>
+                    <div class="side-widget">
+                        <h3 class="text-center"><%= widgets[i].title %></h3>
+                        <p align="center"><%= widgets[i].subtitle %></p>
+                        <%- widgets[i].content %>
+                    </div>
+                <% } %>
 
                 <div class="side-widget">
                     <h3 class="text-center">Find Me On</h3>

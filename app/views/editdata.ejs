@@ -58,7 +58,26 @@
             <input name="tagId" type="text" hidden value="<%= keyword._id %>" >
         </form>
 
-    <% } %>
+    <% } else if(widget) { %>
+        <h1>Editing Widget</h1>
+
+        <form action="/admin/update-widget" method="POST">
+            <label>Title</label>
+            <br>
+            <input type="text" placeholder="Title" name="title" value="<%= widget.title %>">
+            <br>
+            <label>Subtitle</label>
+            <br>
+            <input type="text" placeholder="Subtitle" name="subtitle" value="<%= widget.subtitle %>">
+            <br>
+            <label>Content</label>
+            <br>
+            <input type="text" placeholder="Content (HTML)" name="content" value="<%= widget.content %>">
+            <br>
+            <button class="btn btn-primary" type="submit">Update</button>
+            <input name="widgetId" type="text" hidden value="<%= widget._id %>" >
+        </form>
+    <% }  %>
 </div>
 
 <%- include('partials/footer') %>

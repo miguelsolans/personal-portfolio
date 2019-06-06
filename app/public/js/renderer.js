@@ -19,7 +19,6 @@ define([
      */
     FB.getLoginStatus(function(response) {
         if (response.status === 'connected') {
-
             console.log("%c Logged in!",
                 'font-weight: bold; font-size: 50px; color: green; text-shadow: 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black');
             /**
@@ -44,7 +43,7 @@ define([
             /**
              * Get Certificates album images
              */
-            FB.api('331562370879407?fields=photos{name,images}', function(data) {
+            FB.api('/331562370879407?fields=photos{name,images}', function(data) {
                 //console.dir(data);
                 var photos = data.photos.data;
                 for(var i in photos) {

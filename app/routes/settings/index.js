@@ -2,14 +2,17 @@
 // MongoDB CRUD Operations
 const express   = require('express');
 const router    = express.Router();
+const async     = require('async');
 const mongoose  = require('mongoose');
 
 // Get Data Model Modules
 const Tags       = require('../../models/Keywords');
+const Widgets   = require('../../models/Widgets');
 
 /**
  * CREATE OPERATIONS
  * 1. Create new tag
+ * 2. Create new widget
  */
 router.post('/new-tag', (req, res) => {
     const tag = new Tags({
@@ -20,9 +23,26 @@ router.post('/new-tag', (req, res) => {
     tag.save()
         .then(result => {
             Tags.find().select().exec()
-                .then(result => res.render('settings', { keyword: result }));
+                .then(result => res.redirect("/admin/settings"));
+                //.then(result => res.render('settings', { keyword: result }));
+
         })
         .catch(err => console.log(err))
+});
+
+router.post('/new-widget', (req, res) => {
+    const widget = new Widgets({
+        _id: new mongoose.Types.ObjectId(),
+        title: req.body.title,
+        subtitle: req.body.subtitle,
+        content: req.body.content
+    });
+
+    widget.save()
+        .then(result => {
+            Tags.find().select().exec()
+                .then(result => res.redirect("/admin/settings"));
+        })
 });
 
 
@@ -32,17 +52,30 @@ router.post('/new-tag', (req, res) => {
  */
 router.get('/settings', (req, res) => {
 
-    Tags.find()
-        .select()
-        .exec()
-        .then(docs => {
-            res.render('settings', { keyword: docs })
-        });
+    var tagList = Tags.find({});
+    var widgetList  = Widgets.find({});
+
+    var resources = {
+        tags:    tagList.exec.bind(tagList),
+        widgets: widgetList.exec.bind(widgetList)
+    };
+
+    async.parallel(resources, function(error, result) {
+        if (error) {
+            res.status(500).send(error);
+            return;
+        }
+
+        res.render('settings', {
+            keyword: result.tags,
+            widgets: result.widgets
+        })
+    })
 });
 
 /**
  * UPDATE OPERATIONS
- * 1. Display Form to edit given keyword ID
+ * 1. Display form to edit
  * 2. Update Tag from FORM values
  */
 router.get('/edit-tag/:id', (req, res) => {
@@ -50,7 +83,7 @@ router.get('/edit-tag/:id', (req, res) => {
         .select()
         .exec()
         .then(docs => {
-            res.render('editdata', { education: null, job: null, keyword: docs });
+            res.render('editdata', { education: null, job: null, keyword: docs, widget: null });
         })
 });
 router.post('/update-tag', (req, res) => {
@@ -70,7 +103,36 @@ router.post('/update-tag', (req, res) => {
         .exec()
         .then(result => {
             Tags.find().exec()
-                .then(result => res.render('settings', { keyword:result } ));
+                .then(result => res.redirect("/admin/settings"));
+                // .then(result => res.render('settings', { keyword:result } ));
+        })
+        .catch(err => console.log(err))
+});
+
+router.get('/edit-widget/:id', (req, res) => {
+    Widgets.findOne({ _id: req.params.id })
+        .select()
+        .exec()
+        .then(docs => {
+            res.render('editdata', { education: null, job: null, keyword: undefined, widget: docs });
+        })
+});
+router.post('/update-widget', (req, res) => {
+    const widgetId = req.body.widgetId;
+
+
+    var updateOps = {};
+    for(const [key, value] of Object.entries(req.body)){
+        updateOps[key] = value;
+    }
+
+    Widgets.update(
+        { _id: widgetId },
+        { $set: updateOps })
+        .exec()
+        .then(result => {
+            Tags.find().exec()
+                .then(result => res.redirect("/admin/settings"));
         })
         .catch(err => console.log(err))
 });
@@ -79,6 +141,7 @@ router.post('/update-tag', (req, res) => {
 /**
  * DELETE OPERATIONS
  * 1. Delete certain tag
+ * 2. Delete certain widget
  */
 router.get('/delete-tag/:id', (req, res) => {
     const tagId = req.params.id;
@@ -87,11 +150,25 @@ router.get('/delete-tag/:id', (req, res) => {
         .exec()
         .then(result => {
             Tags.find().exec()
-                .then(result => res.render('settings', { keyword: result } ))
+                .then(result => res.redirect("/admin/settings"))
+                // .then(result => res.render('settings', { keyword: result } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
 });
+router.get('/delete-widget/:id', (req, res) => {
+    const widgetId = req.params.id;
+
+    Widgets.deleteOne({ _id: widgetId })
+        .exec()
+        .then(result => {
+            Widgets.find().exec()
+                .then(result => res.redirect("/admin/settings"))
+                .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
+});
+
 
 
 module.exports = router;

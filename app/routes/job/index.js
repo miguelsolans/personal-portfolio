@@ -23,7 +23,7 @@ router.post('/new-job', (req, res) => {
     job.save()
         .then(result => {
             Job.find().exec()
-                .then(result => res.render('edit', { education: null, job: result, keyword: null } ))
+                .then(result => res.render('edit', { education: null, job: result, keyword: null, widget: null } ))
                 .catch(err => console.log(err));
         })
         .catch(err => console.log(err))

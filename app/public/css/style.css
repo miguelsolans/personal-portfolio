@@ -15,6 +15,7 @@ body {
 	text-align: center;
 	display: table;
 }
+
 .heading h1 {
 	display: table-cell;
 	vertical-align: middle;
