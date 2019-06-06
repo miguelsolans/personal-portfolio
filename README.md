@@ -46,8 +46,8 @@ $ npm run dev
 
 By running in Dev Mode, the server will refresh itself every time changes in code are saved  
 
-Since this project has a self signed SSL certificate, to access this website, 
-it is MANDATORY type the following address https://localhost:3000
+For debugging purposes, and due to some APIs, this project has a self signed SSL certificate, 
+therefore, it is MANDATORY type the following address https://localhost:3000
 
 #   Accessing Dashboard
 For CRUD operations, Dashboard can be accessed by entering navigating to https://localhost:3000 with the following credentials
@@ -64,7 +64,7 @@ Some features to be implemented in the future
 | 1  | Dashboard Notifications              | Medium         | To Develop         |
 | 2  | Allow users to create own portfolios | High           | To Develop         |
 | 3  | Portfolio Themes                     | Medium         | To Develop after 2 |
-| 4* | Export to Curriculumn Vitae          | Low            | To Develop         |
+| 4* | Export to Curriculum Vitae          | Low            | To Develop         |
   
   \* More fields need to be created on database  
  
