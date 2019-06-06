@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miguel Solans</title>
+    <meta name="keywords" id="keywords" content="<%= tags %>">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!-- Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Include Modules -->
+    <script data-main="js/main" src="js/external/require.js"></script>
+    <!-- Widget Tags -->
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+</head>
+<body>
+
+<div id="carousel-header" class="carousel slide" data-ride="carousel">
+    <div id="header-img" class="carousel-inner header"></div>
+</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Right Panel -->
+            <div class="col-md-9">
+                <div class="container">
+                    <h2 align="center">Certificates</h2>
+                    <div id="carousel-certificates" class="carousel slide" data-ride="carousel">
+                        <div id="certificates-img" class="carousel-inner"><!--Images Go Here --></div>
+                        <!-- Carousel nav -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev" onclick="$('#carousel-certificates').carousel('prev')">‹</a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next" onclick="$('#carousel-certificates').carousel('next')">›</a>
+                        <!--<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>-->
+                        <!--<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
+                    </div>
+                    <!--<div id="certificates-img"></div>-->
+                    <h2 align="center">Projects I've taken role</h2>
+                    <!--<div id="projects-img"></div>-->
+                    <div id="carousel-projects" class="carousel slide" data-ride="carousel">
+                        <div id="projects-img" class="carousel-inner"><!--Images Go Here --></div>
+                    </div>
+
+                    <h2 align="center">Personal Interests</h2>
+                    <h2 align="center">Music I've been listening</h2>
+                    <p>I consider music as an inspiration to any kind of work so I like to take inspiration out it, ranging from Classical to Soundtracks and even Rock and Metal to Pop from the 80s</p>
+                    <div id="music" class="carousel slide" data-ride="carousel"></div>
+                </div>
+            </div>
+
+            <!-- Left Panel -->
+            <div class="col-md-3">
+                <div class="side-widget">
+					<div class="col d-flex align-items-center justify-content-center" id="profile-picture"></div>
+					<h3 class="text-center" id="name"></h3>
+					<p id="description"></p>
+				</div>
+                <div class="side-widget">
+                    <h3 class="text-center">Quick Info</h3>
+
+                    <p>Education: </p>
+                    <ol class="educations">
+                        <% for(var i in education) {%>
+                            <li class="education">
+                                <span><a target="_blank" href="<%= education[i].link %>"><%= education[i].school %></a> - </span>
+                                <span><%= education[i].course %></span>
+                            </li>
+                        <% } %>
+                    </ol>
+
+                    <p>Currently Working On:</p>
+                    <ol class="current-jobs">
+                        <% for(var i in job) {%>
+                            <%if(job[i].flag === true) {%>
+                                <li class="job">
+                                    <span><a target="_blank" href="<%= job[i].link %>"><%= job[i].company %></a> - </span>
+                                    <span><%= job[i].description %></span>
+                                </li>
+                            <% } %>
+                        <% } %>
+                    </ol>
+
+                    <p>Used to Work At:</p>
+                    <ol class="current-jobs">
+                        <% for(var i in job) {%>
+                            <%if(job[i].flag === false) {%>
+                                <li class="job">
+                                    <span><a target="_blank" href="<%= job[i].link %>"><%= job[i].company %></a> - </span>
+                                    <span><%= job[i].description %></span>
+                                </li>
+                            <% } %>
+                        <% } %>
+                    </ol>
+                </div>
+
+                <div class="side-widget">
+                    <h3 class="text-center">Find Me On</h3>
+                    <p align="center">LinkedIn</p>
+                    <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US"
+                         data-type="vertical" data-theme="light" data-vanity="miguelsolans">
+                        <a class="LI-simple-link" href='https://pt.linkedin.com/in/miguelsolans?trk=profile-badge'>Miguel Solans</a>
+                    </div>
+
+
+                </div>
+
+                <div class="side-widget">
+					<h3 class="text-center">Follow Me On</h3>
+                    <p align="center">Soundcloud</p>
+					<!--<a class="twitter-timeline" data-height="350" href="https://twitter.com/MiguelRSolans?ref_src=twsrc%5Etfw">Tweets by MiguelRSolans</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/308014113&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <!--<h2>Pictures I've taken</h2>-->
+            <div id="instafeed"></div>
+        </div>
+
+    </div>
+
+
+    <script>
+        // Fixes the prev/next links of the sliders
+        $('.carousel-control.left').click(function(e) {
+            e.stopPropagation();
+            $('#carousel-certificates').carousel('prev');
+            return false;
+        });
+
+        $('.carousel-control.right').click(function(e) {
+            e.stopPropagation();
+            $("#carousel-certificates").carousel('next');
+            return false;
+        });
+    </script>
+</body>
+</html>
