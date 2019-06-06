@@ -36,12 +36,14 @@
     <%- include('partials/forms/new-tag') %>
 
     <!-- Widget Area -->
-    <h3>Keywords</h3>
+    <hr>
+    <h3>Widgets</h3>
     <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col">No.</th>
-            <th scope="col">Tags</th>
+            <th scope="col">Title</th>
+            <th scope="col">Subtitle</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -51,6 +53,7 @@
             <tr class="education">
                 <td><%= i %></td>
                 <td><%= widgets[i].title %></td>
+                <td><%= widgets[i].subtitle %></td>
                 <td>
                     <a href="/admin/edit-widget/<%= widgets[i]._id %>">
                         <span class="glyphicon glyphicon-pencil"></span>
