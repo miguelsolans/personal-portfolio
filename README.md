@@ -1,8 +1,8 @@
 # 	Portfolio
 
 *Portfolio* is a project created with nodeJS technology, MongoDB and several external APIs, all built with JavaScript.
-This web-app *Portfolio* may work not only as a Currculumn Vitae but also as a free space for his owner to upload and 
-display their own content, integrating severals social networks.
+This web-app *Portfolio* may work not only as a Curriculum Vitae but also as a free space for his owner to upload and 
+display their own content, integrating several social networks.
 
 #   Dependencies
 
@@ -18,7 +18,7 @@ Besides npm and nodeJS, APIs such as:
 1. Facebook
 1. ~~LastFM~~
 
-To install all dependecies, it is mandatory to run the following command inside portfolio folder containing *package.json*
+To install all dependencies, it is mandatory to run the following command inside portfolio folder containing *package.json*
 
 ```
 $ npm install 
