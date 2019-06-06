@@ -64,7 +64,7 @@ Some features to be implemented in the future
 | 1  | Dashboard Notifications              | Medium         | To Develop         |
 | 2  | Allow users to create own portfolios | High           | To Develop         |
 | 3  | Portfolio Themes                     | Medium         | To Develop after 2 |
-| 4* | Export to Curriculum Vitae          | Low            | To Develop         |
+| 4* | Export to Curriculum Vitae           | Low            | To Develop         |
   
   \* More fields need to be created on database  
  
