@@ -56,6 +56,12 @@ For CRUD operations, Dashboard can be accessed by entering navigating to https:/
   
 User permissions will be created, eventually
 
+#   Changelog
+
+1. June the 7th, 2019
+   - Sort usings in EJS and HTML files
+   - Rich Text support to HTML
+  
 #   To Do List
 Some features to be implemented in the future  
   
