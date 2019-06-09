@@ -19,6 +19,8 @@ router.post('/new-content', (req, res) => {
         flag: req.body.flag === 'true'
     });
 
+    console.log(req.body.content);
+
     content.save()
         .then(result => {
             Content.find().exec()
