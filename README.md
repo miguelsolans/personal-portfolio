@@ -60,7 +60,10 @@ User permissions will be created, eventually
 
 1. June the 7th, 2019
    - Sort usings in EJS and HTML files
-   - Rich Text support to HTML
+   - Rich Text editing Library
+2. June the 9th, 2019
+   - File structure re-organized 
+   - Rich Text support when adding new content (editing currently unsupported)
   
 #   To Do List
 Some features to be implemented in the future  
