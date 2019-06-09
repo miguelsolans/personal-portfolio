@@ -11,7 +11,7 @@ define([
 
 
     if(params[1] === 'admin' || params[1] === 'newdata') {
-        admin.renderRichText()
+        admin.renderRichText();
     }
     else {
         publicData.renderFacebookData();
