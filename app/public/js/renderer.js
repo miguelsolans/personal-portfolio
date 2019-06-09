@@ -13,7 +13,7 @@ define([
     var params = sPath.split('/');
 
 
-    if(params[1] === 'admin') {
+    if(params[1] === 'admin' || params[1] === 'newdata') {
         // do something
         $('.content').richText({
             // text formatting
