@@ -14,8 +14,8 @@ This project has been built and uses technologies and third party npm libraries 
 1. Mongoose  
 
 Besides npm and nodeJS, APIs such as:
-1. Instagram through Instafeed
-1. Facebook
+1. Instagram via Instafeed
+1. Facebook via Facebook SDK
 1. ~~LastFM~~
 
 To install all dependencies, it is mandatory to run the following command inside portfolio folder containing *package.json*
@@ -56,6 +56,12 @@ For CRUD operations, Dashboard can be accessed by entering navigating to https:/
   
 User permissions will be created, eventually
 
+#   Changelog
+
+1. June the 7th, 2019
+   - Sort usings in EJS and HTML files
+   - Rich Text support to HTML
+  
 #   To Do List
 Some features to be implemented in the future  
   
