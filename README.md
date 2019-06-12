@@ -64,6 +64,9 @@ User permissions will be created, eventually
 2. June the 9th, 2019
    - File structure re-organized 
    - Rich Text support when adding new content (editing currently unsupported)
+3. June the 13th, 2019
+   - New Tags System
+   - Fixed bug where Instafeed library couldn't be imported
   
 #   To Do List
 Some features to be implemented in the future  
