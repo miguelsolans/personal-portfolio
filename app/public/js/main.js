@@ -4,6 +4,7 @@ require.config({
     "*": {
         "utils":    {},
         "richText": {},
+        "tagify":   {},
         "admin":    {},
         "public":   {}
     },
@@ -13,6 +14,7 @@ require.config({
         facebook:   'external/facebook',
         utils:      'utils',
         richText:   'external/jquery.richtext',
+        tagify:     'external/tagify',
         admin:      'admin',
         public:     'public'
     },

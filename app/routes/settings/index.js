@@ -15,6 +15,17 @@ const Widgets   = require('../../models/Widgets');
  * 2. Create new widget
  */
 router.post('/new-tag', (req, res) => {
+
+    var jsonTags = JSON.parse(req.body.tag);
+
+    req.body.tag = "";
+
+    for(var i = 0; i < jsonTags.length ; i++) {
+        req.body.tag += jsonTags[i].value;
+        if(i === (jsonTags.length - 1)) break;
+        req.body.tag += "; ";
+    }
+
     const tag = new Tags({
         _id: new mongoose.Types.ObjectId(),
         tag: req.body.tag
@@ -83,13 +94,22 @@ router.get('/edit-tag/:id', (req, res) => {
         .select()
         .exec()
         .then(docs => {
+            console.log(docs);
             res.render('editdata', { education: null, job: null, keyword: docs, widget: null });
         })
 });
 router.post('/update-tag', (req, res) => {
     const tagId = req.body.tagId;
 
-    console.log(req.body);
+    var jsonTags = JSON.parse(req.body.tag);
+
+    req.body.tag = "";
+
+    for(var i = 0; i < jsonTags.length ; i++) {
+        req.body.tag += jsonTags[i].value;
+        if(i === (jsonTags.length - 1)) break;
+        req.body.tag += "; ";
+    }
 
     var updateOps = {};
     for(const [key, value] of Object.entries(req.body)){
