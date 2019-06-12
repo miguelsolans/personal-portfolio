@@ -83,10 +83,10 @@ Some features to be implemented in the future
 #   Repository
 
 I've put my sweat and tears into this project and I will continue doing so 
-because I found this project quite empowering and fun some way.  
+because I found this project quite empowering and fun.  
 
 If you find it useful or interesting, please do not replicate this idea. 
-Although, you're free to contribute on this [Github Repository](https://github.com/miguelsolans/personal-portfolio)  
+Although, you're free to contribute on this [Github Repository](https://github.com/miguelsolans/personal-portfolio). Every bit is appreciated ;-) !  
     
 #   Disclaimer
 Copyright (c) 2019, Miguel Solans  
