@@ -3,7 +3,7 @@ define([
     'instafeed',
     'utils',
     'facebook'
-],function($, instafeed, utils) {
+],function($, Instafeed, utils) {
     'use strict';
 
     return {
