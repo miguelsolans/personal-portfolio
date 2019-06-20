@@ -77,6 +77,7 @@ Some features to be implemented in the future
 | 2  | Allow users to create own portfolios | High           | To Develop         |
 | 3  | Portfolio Themes                     | Medium         | To Develop after 2 |
 | 4* | Export to Curriculum Vitae           | Low            | To Develop         |
+| 5  | Custom CSS stylesheet                | Medium         | Under Development  | 
   
   \* More fields need to be created on database  
  
