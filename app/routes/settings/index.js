@@ -4,6 +4,7 @@ const express   = require('express');
 const router    = express.Router();
 const async     = require('async');
 const mongoose  = require('mongoose');
+const fs        = require('fs');
 
 // Get Data Model Modules
 const Tags       = require('../../models/Keywords');
@@ -77,10 +78,23 @@ router.get('/settings', (req, res) => {
             return;
         }
 
-        res.render('settings', {
-            keyword: result.tags,
-            widgets: result.widgets
-        })
+        // Read CSS file
+        fs.readFile('./app/public/css/style.css', (err, data) => {
+            if(err) {
+                res.render('settings', {
+                    style: "Couldn't read CSS file",
+                    keyword: result.tags,
+                    widgets: result.widgets
+                })
+            }
+            else {
+                res.render('settings', {
+                    style: data,
+                    keyword: result.tags,
+                    widgets: result.widgets
+                });
+            }
+        });
     })
 });
 
