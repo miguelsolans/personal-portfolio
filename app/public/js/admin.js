@@ -2,7 +2,8 @@ define([
     // Nothing
     'jquery',
     'tagify',
-    'richText'
+    'richText',
+    'cookies'
 ],function($, Tagify, richText) {
     'use strict';
 

@@ -1,8 +1,9 @@
 define([
     'jquery',
     'admin',
-    'public'
-], function($, admin, publicData) {
+    'public',
+    'cookies'
+], function($, admin, publicData, cookies) {
 
 
     var sPath = window.location.pathname;
@@ -13,6 +14,8 @@ define([
     if(params[1] === 'admin' || params[1] === 'newdata') {
         admin.renderRichText();
         admin.renderTagify();
+        var language = cookies.getCookie("lang");
+        if(language === "") { cookies.setCookie("lang", "pt", 365)}
     }
     else {
         publicData.renderFacebookData();

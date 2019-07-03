@@ -10,6 +10,7 @@
         <button class="tablinks" onclick="openTab(event, 'keywords')" id="defaultOpen">Keywords</button>
         <button class="tablinks" onclick="openTab(event, 'widgets')">Widgets</button>
         <button class="tablinks" onclick="openTab(event, 'styling')">Styling</button>
+        <button class="tablinks" onclick="openTab(event, 'advanced')">Advanced</button>
     </div>
 
     <!-- Keywords Area -->
@@ -90,10 +91,21 @@
 
     <div id="styling" class="tabcontent">
         <h3>CSS Styles</h3>
+        <textarea><%= style %></textarea>
         <div>
-            <%= style %>
+
         </div>
     </div>
+
+    <div id="advanced" class="tabcontent">
+        <h3>Advanced</h3>
+
+        <select id="language-selection">
+            <option value="ptPT">Portuguese</option>
+            <option value="engUS">English (US)</option>
+        </select>
+    </div>
+
 </div>
 
 <script>
@@ -110,7 +122,6 @@
         document.getElementById(tabId).style.display = "block";
         evt.currentTarget.className += " active";
     }
-
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 </script>

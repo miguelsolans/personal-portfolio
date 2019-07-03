@@ -6,7 +6,8 @@ require.config({
         "richText": {},
         "tagify":   {},
         "admin":    {},
-        "public":   {}
+        "public":   {},
+        "cookies":  {}
     },
     paths: {
         jquery:     'external/jquery',
@@ -16,11 +17,12 @@ require.config({
         richText:   'external/jquery.richtext',
         tagify:     'external/tagify',
         admin:      'admin',
-        public:     'public'
+        public:     'public',
+        cookies:    'cookies'
     },
 });
 
 //Main module
-require(["renderer", "utils", "admin", "public"], function () {
+require(["renderer", "utils", "admin", "public", "cookies"], function () {
     console.log("RequireJS Modules Loaded");
 });
