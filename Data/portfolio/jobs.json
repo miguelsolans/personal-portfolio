@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5cf043116158a0f187ed3fc1"},"company":"WeDo Technologies","link":"https://wedotechnologies.com","description":"Internship","flag":true}
+{"_id":{"$oid":"5cd584c63d1bfdeaefb71bbe"},"company":"HappyPC","link":"https://www.happypc.pt/","description":"Internship","flag":false}
+{"_id":{"$oid":"5cd584e93d1bfdeaefb71bbf"},"company":"Inforeco ByColors","link":"","description":"Internship","flag":false}
+{"_id":{"$oid":"5cd5845d3d1bfdeaefb71bbd"},"company":"ARTAVE Symphonic Orchestra","link":"http://artave.pt/","description":"Violin and Choir","flag":false}
+{"_id":{"$oid":"5cf042dc6158a0f187ed3fc0"},"company":"Mentour360 & Mentour Pilot","link":"https://www.mentourpilot.com","description":"Social Managment","flag":false}
